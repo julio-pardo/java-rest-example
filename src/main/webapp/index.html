@@ -1,0 +1,49 @@
+<html>
+    <head>
+       <title>Example REST API</title>
+       <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+       <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    
+    <body> 
+        <form action="rest/api/submitForm" class="add-new pure-form" id="userForm">
+            <fieldset>
+                <legend>REST API Implementation using Java + EasyRESTFul + ajax</legend>
+        
+                <input name="name" placeholder="Name">
+                <input name="mood" placeholder="Mood">
+        
+                <button id="form-button-submit" type="submit" class="pure-button pure-button-primary">Submit</button>
+            </fieldset>
+        </form>      
+    </body>
+
+    <style>
+        .add-new{
+            margin-left: 30%;
+            margin-left: 30%;
+        }
+    </style>
+
+	<script>
+	$( "userForm" ).submit(function( event ) { 
+		  // prevent from submitting default
+		  event.preventDefault();
+		 
+		  // get the url and any other data you want to pass in and create the post
+		  var $form = $( this ),
+		  	url = $form.attr("action"),
+		    name = $form.find( "input[name='name']" ).val(),
+		    mood = $form.find( "input[name='mood']" ).val();
+		 
+		  var posting = $.post( 
+				  url: url,
+				  succcess: function() {
+					  alert('success')};
+		  );
+	});
+		  
+		  
+	</script>
+ </html>
